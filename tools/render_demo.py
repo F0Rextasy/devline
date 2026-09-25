@@ -92,7 +92,7 @@ def main():
             wf.append((text, col))
             max_w = max(max_w, int(tmp.textlength(text, font=font)))
         wrapped.append(wf)
-        max_lines = max(max_lines, len(wf))
+        max_lines += len(wf)  # cumulative worst case: final frame = all lines
 
     W = max_w + 48
     H = max_lines * 22 + 36
